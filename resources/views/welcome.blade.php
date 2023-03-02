@@ -31,8 +31,8 @@
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
 
                 <ul>
-                    <li><a href="{{route('contact.list')}}">About</a></li>
-                    <li><a href="{{route('about.us')}}">Contact</a></li>
+                <li><a href="{{route('about.us')}}">About</a></li>
+                    <li><a href="{{route('contact.list')}}">Contact</a></li>
                 </ul>
             </div>
         </div>

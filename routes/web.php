@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\firstControler;
 use APP\Http\Middleware\nameValide;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\secController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,14 +25,20 @@ Route::get('/', function () {
 //     return view('about');
 // });
 Route::view('/about', 'about')->name('about.us');
+//Route::get('/about', [firstControler::class, 'about'])->name('about.us');
+Route::get('/about', [firstControler::class, 'about'])->name('about.us');
+Route::get('/about.two', [secController::class, 'some']);
 // Route::get('/contact/{roll}', function ($roll) {
 //     return "my roll is $roll";
 //     // return redirect('about');
 // });
   
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact.list');
+// Route::get('/contact', function () {
+//     return view('contact');
+// })->name('contact.list');
+
+Route::get('/contact', [firstControler::class, 'index'])->name('contact.list');
+Route::post('/store', [firstControler::class, 'store'])->name('store');
 
 // Route::get('/country', function () {
 //     return 'this is country page';
